@@ -76,10 +76,9 @@ ${theme === 'tos' ? 'tos tos-border' : theme === 'cyberpunk' ? 'cyberpunk-bg neo
                             title="Please Choose or Add a list first"
                             disabled={!workingCatAdd}
                             onClick={handleAdd}
-                            className='w-full h-1/7 text-black disabled:cursor-not-allowed bg-amber-300'
+                            className='w-full h-1/7 text-black disabled:hidden bg-amber-300'
                             style={{ fontSize: 'var(--text-base)', borderRadius: `min(calc(0.75 * var(--unit)), 12px)` }}
                         >
-
                             Add New Category
                         </button>
                     </div>
