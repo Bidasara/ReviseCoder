@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.rotate-overlay {
+  /* Hidden by default */
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  
+  /* Center the content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 9999;
+}
+
+.rotate-overlay-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-family: sans-serif;
+}
+
+.rotate-overlay-icon {
+  width: 60px;
+  height: 60px;
+  animation: rotate-animation 1.5s infinite linear;
+}
+
+@keyframes rotate-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+:root {
+  /* Base scale factor using container dimensions */
+  --scale-factor: 2cqmin;
+  
+  /* Responsive units based on your container */
+  --unit-xs: calc(0.25 * var(--scale-factor));
+  --unit-sm: calc(0.5 * var(--scale-factor));
+  --unit: calc(1 * var(--scale-factor));
+  --unit-lg: calc(1.5 * var(--scale-factor));
+  --unit-xl: calc(2 * var(--scale-factor));
+  --unit-2xl: calc(3 * var(--scale-factor));
+  
+  /* Text scaling */
+  --text-xs: calc(0.75 * var(--scale-factor));
+  --text-sm: calc(0.875 * var(--scale-factor));
+  --text-base: calc(1 * var(--scale-factor));
+  --text-lg: calc(1.125 * var(--scale-factor));
+  --text-xl: calc(1.25 * var(--scale-factor));
+  --text-2xl: calc(1.5 * var(--scale-factor));
+}
+
+/* Custom scrollbar for your container */
+.custom-scrollbar::-webkit-scrollbar {
+  width: calc(0.5 * var(--scale-factor));
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: calc(0.25 * var(--scale-factor));
+}
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c7c7c7;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+
+/* Hide scrollbars globally */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* WebKit browsers */
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #2d3748;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4a5568;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #718096;
+}
+
+/* Custom Checkbox Styling */
+/* Custom Checkbox Styling */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  height: calc(1.55 * var(--unit));
+  width: calc(1.55 * var(--unit));
+  background-color: #fff;
+  border: 2px solid #d1d5db;
+  border-radius: min(calc(0.25 * var(--unit)), 4px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #4f46e5;
+  border-color: #4f46e5;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: white;
+  font-size: calc(0.975 * var(--text-base));
+  font-weight: bold;
+}
+
+.dark input[type="checkbox"] {
+  background-color: #2d3748;
+  border-color: #4a5568;
+}
+
+.dark input[type="checkbox"]:checked {
+  background-color: #6366f1;
+  border-color: #6366f1;
+}
+
+
+/* Add some nice transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Add responsive font sizes */
+html, body, #root {
+  height: 100%; /* Ensures full height from the viewport down */
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Add focus styles for accessibility */
+button:focus, input:focus {
+  outline: 2px solid rgba(99, 102, 241, 0.6);
+  outline-offset: 2px;
+}
+
+/* Optional: Add a custom font */
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.cyberpunk-bg {
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #ff00cc 100%);
+}
+.neon-text {
+  text-shadow: 0 0 8px #00fff7, 0 0 16px #ff00cc;
+}
+.shadow-cyber {
+  box-shadow: 0 0 8px #ff00cc, 0 0 16px #00fff7;
+}
+.drop-shadow-cyber {
+  filter: drop-shadow(0 0 8px #00fff7) drop-shadow(0 0 16px #ff00cc);
+}
+.cyberpunk-textarea {
+  caret-color: #00fff7;
+}
+.cyberpunk-scrollbar::-webkit-scrollbar { width: 8px; background: #0ff; }
+.cyberpunk-scrollbar::-webkit-scrollbar-thumb { background: #ff00cc; border-radius: 8px; box-shadow: 0 0 8px #ff00cc, 0 0 16px #00fff7; }
+.cyberpunk-scrollbar { scrollbar-width: thin; scrollbar-color: #ff00cc #0ff; }
+.scrollbar::-webkit-scrollbar {
+    width: 12px; /* Increased width for better visibility */
+    background: #f0f0f0; /* Light grey background for the track */
+    border-radius: 6px; /* Slightly rounded corners for the track */
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background: #888888; /* Medium grey for the thumb */
+    border-radius: 8px; /* More rounded corners for the thumb */
+    /* Subtle shadow for depth */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.fading-overflow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 4rem; /* Adjust this width for the size of the fade */
+  pointer-events: none; /* Prevents the fade from blocking clicks */
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+/* On hover, make the thumb slightly darker */
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555555; /* Darker grey on hover */
+}
+
+/* For Firefox */
+.scrollbar {
+    scrollbar-width: thin; /* Makes the scrollbar thinner */
+    scrollbar-color: #888888 #f0f0f0; /* Thumb color then track color */
+}
+
+/* Delete Icon Hover Effects */
+.delete-icon {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.delete-icon:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  transform: scale(1.1);
+}
+
+/* Dark mode delete icon hover */
+.dark .delete-icon:hover {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+/* Cyberpunk theme delete icon hover */
+.cyberpunk .delete-icon {
+  color: #00fff7;
+  text-shadow: 0 0 8px #00fff7;
+}
+
+.cyberpunk .delete-icon:hover {
+  background-color: rgba(255, 0, 204, 0.3);
+  color: #ff00cc;
+  text-shadow: 0 0 12px #ff00cc, 0 0 20px #ff00cc;
+  box-shadow: 0 0 8px #ff00cc, 0 0 16px #00fff7;
+}
+
+/* TOS theme delete icon hover */
+.tos .delete-icon {
+  color: #ff6b6b;
+  transition: all 0.2s ease-in-out;
+}
+
+.tos .delete-icon:hover {
+  background-color: rgba(255, 107, 107, 0.2);
+  color: #ff5252;
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(255, 107, 107, 0.5);
+}
+
+/* src/components/Milestones.css */
+
+/* --- Page Layout & Header --- */
+.milestones-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+  /* min-height: 100vh; */
+  padding: 2rem;
+  position: relative;
+}
+
+.milestones-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #4a4a68;
+  padding-bottom: 1rem;
+}
+
+.milestones-header h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.pixel-counter {
+  background-color: #0f3460;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid #16213e;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.pixel-counter span {
+  font-size: 1.5rem;
+}
+
+/* --- Milestone Grid --- */
+.milestones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+/* --- Milestone Card Base Style --- */
+.milestone-card {
+  background: #1e1e3f;
+  border: 2px solid #4a4a68;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.milestone-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.milestone-icon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.milestone-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+.milestone-content p {
+  margin: 0 0 1rem 0;
+  color: #a0a0c0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.milestone-reward {
+  font-weight: 600;
+  color: #50c878;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* --- Card Status Variations --- */
+
+/* Completed Milestone */
+.milestone-card.completed {
+  border-left: 8px solid #ffd700; /* Gold color */
+  background: linear-gradient(135deg, #1e1e3f, #2a2a5a);
+}
+
+.milestone-card.completed .milestone-icon {
+  filter: drop-shadow(0 0 5px #ffd700);
+}
+
+/* In-Progress Milestone */
+.milestone-card.in-progress {
+  border-left: 8px solid #3a86ff; /* Blue color */
+}
+
+/* Locked Milestone */
+.milestone-card.locked {
+  opacity: 0.6;
+  filter: grayscale(50%);
+}
+
+.milestone-card.locked:hover {
+  transform: none; /* Disable hover effect for locked cards */
+  box-shadow: none;
+}
+
+/* Add this class to re-enable scrollbars on specific elements */
+.custom-scrollbar::-webkit-scrollbar {
+  display: block; /* Overrides the global 'display: none' */
+  width: 8px;
+}
+
+/* Style the track (the background of the scrollbar) */
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+/* Style the thumb (the part you drag) */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #c7c7c7;
+  border-radius: 4px;
+}
+
+/* Style the thumb on hover */
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+
+/* For Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #c7c7c7 #f1f1f1;
+}

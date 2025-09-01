@@ -1,0 +1,68 @@
+# service.yaml
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: revisecoder
+spec:
+  template:
+    spec:
+      containers:
+        - image: placeholder
+          ports:
+            - containerPort: 8080
+          env:
+            # This is a non-secret variable
+            - name: NODE_ENV
+              value: "production"
+            
+            # --- Reference your secrets below ---
+            - name: MONGO_URI
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-uri
+                  key: latest
+            - name: ACCESS_TOKEN_EXPIRY
+              valueFrom:
+                secretKeyRef:
+                  name: ACCESS_TOKEN_EXPIRY
+                  key: latest
+            - name: ACCESS_TOKEN_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: ACCESS_TOKEN_SECRET
+                  key: latest
+            - name: REFRESH_TOKEN_EXPIRY
+              valueFrom:
+                secretKeyRef:
+                  name: REFRESH_TOKEN_EXPIRY
+                  key: latest
+            - name: REFRESH_TOKEN_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: REFRESH_TOKEN_SECRET
+                  key: latest
+            - name: CLOUDINARY_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: CLOUDINARY_API_KEY
+                  key: latest
+            - name: CLOUDINARY_API_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: CLOUDINARY_API_SECRET
+                  key: latest
+            - name: CLOUDINARY_CLOUD_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: CLOUDINARY_CLOUD_NAME
+                  key: latest
+            - name: AUTH_USERS
+              valueFrom:
+                secretKeyRef:
+                  name: AUTH_USERS
+                  key: latest
+            - name: appName
+              valueFrom:
+                secretKeyRef:
+                  name: appName
+                  key: latest

@@ -1,0 +1,6 @@
+node_modules/
+.env
+*.log
+Backend/db/animations.js
+Backend/models/ques.js
+Backend/seedRecommendedLists.js

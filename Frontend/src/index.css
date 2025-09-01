@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* TOS Theme Variables */
+.tos {
+  --tos-bg: #181820;
+  --tos-grey: #6d6d6d;
+  --tos-blue: #2d2db3;
+  --tos-border: #23234a;
+  --tos-light: #b0b0b0;
+  --tos-font: 'Share Tech Mono', 'Fira Mono', monospace;
+  background: var(--tos-bg) !important;
+  color: var(--tos-grey) !important;
+  font-family: var(--tos-font) !important;
+}
+.tos .tos-accent { color: var(--tos-blue) !important; }
+.tos .tos-border { border-color: var(--tos-border) !important; }
+.tos .tos-light { color: var(--tos-light) !important; }
+.tos .tos-shadow { box-shadow: 0 0 8px var(--tos-blue); }
+.tos input, .tos textarea, .tos select {
+  background: #23234a;
+  color: var(--tos-light);
+  border: 1.5px solid var(--tos-blue);
+  font-family: var(--tos-font);
+  
+}
+.tos button {
+  background: var(--tos-grey);
+  color: var(--tos-blue);
+  border: 2px solid var(--tos-blue);
+  font-family: var(--tos-font);
+  transition: background 0.2s, color 0.2s;
+}
+.tos button:hover {
+  background: var(--tos-blue);
+  color: var(--tos-grey);
+}
