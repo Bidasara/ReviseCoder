@@ -283,23 +283,35 @@ const markSolvedWithNotes = asyncHandler(async (req, res) => {
         "Hard": 20
     };
 
-    if (user.todayPoints + (points[problem.difficulty] || 0) > user.todayPointLimit) {
-        const diff = user.todayPointLimit - user.todayPoints;
-        if (diff > 0) {
-            if (diff >= points["Medium"]) {
-                throw new ApiError(400, `Try solving a medium problem, or easy problems, you have only ${diff} points left for today`);
-            } else if (diff >= points["Easy"]) {
-                throw new ApiError(400, `Try solving an easy problem, you have only ${diff} points left for today`);
-            }
-        } else {
-            throw new ApiError(400, `You have reached your limit of ${user.todayPointLimit} points for today, for a better learning experience, try again tomorrow, or try Grind Mode 🔥🔥`);
-        }
-    }
+    // if (user.todayPoints + (points[problem.difficulty] || 0) > user.todayPointLimit) {
+    //     const diff = user.todayPointLimit - user.todayPoints;
+    //     if (diff > 0) {
+    //         if (diff >= points["Medium"]) {
+    //             throw new ApiError(400, `Try solving a medium problem, or easy problems, you have only ${diff} points left for today`);
+    //         } else if (diff >= points["Easy"]) {
+    //             throw new ApiError(400, `Try solving an easy problem, you have only ${diff} points left for today`);
+    //         }
+    //     } else {
+    //         throw new ApiError(400, `You have reached your limit of ${user.todayPointLimit} points for today, for a better learning experience, try again tomorrow, or try Grind Mode 🔥🔥`);
+    //     }
+    // }
 
     const levels = [1, 7, 15];
     const dayInMs = 1000 * 60 * 60 * 24;
 
     const data = await DoneProblem.findById(user.doneProblemId);
+
+    const existingProblem = data.problems.find(p => p.problemId.equals(problem._id));
+
+    if (existingProblem) {
+        if (existingProblem.status === 'solved') {
+            throw new ApiError(400, "Already solved this problem, revise it as scheduled");
+        } else if (existingProblem.status === 'revising') {
+            throw new ApiError(400, "Already revising this problem");
+        } else if (existingProblem.status === 'mastered') {
+            throw new ApiError(400, "Already Mastered this problem 🎉🎉");
+        }
+    }
     const nextRevisionInterval = levels[levelOfRevision];
     const nextRevisionDate = nextRevisionInterval * dayInMs + Date.now();
 
@@ -334,7 +346,7 @@ const markSolvedWithNotes = asyncHandler(async (req, res) => {
         }
     );
 
-    return res.status(200).json(new ApiResponse(200, user.pixels, `Problem ${problem.num} marked as solved with notes`));
+    return res.status(200).json(new ApiResponse(200, user.pixels, `Now Revising Problem ${problem.num}`));
 });
 
 const getRecommendedLists = asyncHandler(async (req, res) => {

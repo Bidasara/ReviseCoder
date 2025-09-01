@@ -509,6 +509,7 @@ export const ProblemProvider = ({ children }) => {
         setData(updatedData);
         localStorage.setItem("userData", JSON.stringify(updatedData));
       }
+      showNotification(response.data.message, "success")
     } catch (err) {
       showNotification(err.response.data.message, "error")
       console.error("Error updating problem status:", err);

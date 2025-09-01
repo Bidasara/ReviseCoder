@@ -89,7 +89,7 @@ function HomeContent() {
       </div>
 
       {/* Theme Toggle Button */}
-      <button
+      {/* <button
         className={themeToggleClasses}
         onClick={toggleTheme}
         style={{
@@ -103,7 +103,7 @@ function HomeContent() {
         }}
       >
         {theme === 'light' ? '☀️' : theme === 'dark' ? '🌙' : '✦'}
-      </button>
+      </button> */}
     </div>
   );
 }

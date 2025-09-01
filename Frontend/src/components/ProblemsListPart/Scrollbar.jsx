@@ -42,7 +42,7 @@ const Scrollbar = () => {
                 <div className="relative flex-1 flex items-center justify-center" style={{ padding: 'calc(0.5 * var(--unit)) 0' }}>
                     <div className={`relative z-10 flex items-center rounded-full font-bold shadow-lg border-2 transition-colors
                     ${theme === 'tos' ? 'bg-tos-bg tos-accent tos-theme-mono tos-border tos-shadow' : 'bg-white text-gray-800 dark:bg-gray-800 dark:text-white'}`} style={{ padding: 'calc(0.5 * var(--unit)) calc(1.5 * var(--unit))', fontSize: 'calc(1.2*var(--text-base))' }}>
-                        <span>{currentList?.title || "Select a list"}</span>
+                        <span>{currentList?.title || "‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ "}</span>
                         {currentList?._id && (
                             <button
                                 onClick={async (e) => {

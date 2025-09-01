@@ -90,7 +90,7 @@ const registerUser = asyncHandler(async (req, res) => {
         // },
         // accessToken:tokens.accessToken,
         // accessTokenExpiry:tokens.accessTokenExpiresIn
-        'Check your email for a one-time password. Use it first time, your regular password will work second time onward'));
+        'Check your email for a one-time password. Use it first time, your regular password will work second time onward')); 
 })
 
 const login = asyncHandler(async (req, res) => {

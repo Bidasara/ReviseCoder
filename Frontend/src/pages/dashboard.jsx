@@ -489,7 +489,7 @@ const Dashboard = () => {
 
     return (
         <div className="bg-gray-50" style={{ paddingTop: 'calc(1.5 * var(--unit))', paddingBottom: 'calc(1.5 * var(--unit))' }}>
-            <div className="max-w-6xl mx-auto" style={{ paddingLeft: 'calc(1 * var(--unit))', paddingRight: 'calc(1 * var(--unit))' }}>
+            <div className=" mx-auto" style={{ paddingLeft: 'calc(1 * var(--unit))', paddingRight: 'calc(1 * var(--unit))' }}>
                 <UserProfileSection user={user} />
                 
                 <OverallStatsBar solved={solved} revised={revised} mastered={mastered} />

@@ -29,9 +29,9 @@ const ComingSoonPlaceholder = () => (
             </div>
         </div>
 
-        <div className="relative flex items-center justify-center h-10/12 backdrop-blur-3xl w-full" style={{ padding: 'calc(6 * var(--unit-sm))' }}>
-            <div className="bg-white/95 w-full h-full backdrop-blur-2xl border border-slate-300 rounded-xl shadow-2xl text-center" style={{ padding: 'calc(2 * var(--unit-xs))', borderRadius:'calc(5 * var(--unit-xs))' }}>
-                <h3 className="font-bold text-slate-800" style={{ fontSize: 'calc(3 * var(--text-xs))', marginBottom: 'calc(0.75 * var(--unit-xs))' }}>Launching Soon!</h3>
+        <div className="relative flex items-center justify-center h-full backdrop-blur-3xl w-full" style={{ padding: 'calc(6 * var(--unit-sm))' }}>
+            <div className="bg-white/95 w-full h-full backdrop-blur-2xl border border-slate-300 rounded-xl shadow-2xl text-center" style={{ padding: 'calc(2 * var(--unit-xs))', borderRadius:'calc(5 * var(--unit-xs))',paddingTop:'calc(8*var(--unit-xs))' }}>
+                <h3 className="font-bold text-slate-800" style={{ fontSize: 'calc(3 * var(--text-xs))', marginBottom: 'calc(5 * var(--unit-xs))' }}>Launching Soon!</h3>
                 <p className="text-slate-600" style={{ fontSize: 'calc(1.5* var(--text-xs))', margin: '0 auto' }}>
                     A new way to filter questions, create your own custom lists, and browse collections shared by other users based on stars and popularity.
                 </p>
@@ -88,9 +88,9 @@ const OwnerLists = () => {
                         recomList.map(list => (
                             <div key={list._id} className="border-b flex justify-between items-center border-slate-200 h-2/5 w-full">
                                 <div className='w-10/12' style={{ padding: 'calc(0.25 * var(--unit))' }}>
-                                    <a href="#" className="font-bold text-slate-800 hover:text-blue-600 transition-colors" style={{ fontSize: 'calc(1.125 * var(--text-base))' }}>
+                                    <span className="font-bold text-slate-800" style={{ fontSize: 'calc(1.125 * var(--text-base))' }}>
                                         {list.title}
-                                    </a>
+                                    </span>
                                     <div className="flex overflow-y-hidden overflow-x-hidden w-full relative" style={{ gap: 'calc(0.5 * var(--unit))', padding: 'calc(0.5 * var(--unit)) 0' }}>
                                         {list.categories.length > 0 ? (
                                             list.categories.map(cat => (

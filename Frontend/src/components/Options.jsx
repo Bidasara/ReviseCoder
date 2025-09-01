@@ -57,7 +57,7 @@ const Options = () => {
         ${theme === 'tos' ? 'tos tos-border' : theme === 'cyberpunk' ? 'cyberpunk-bg neon-text border-2 border-cyan-400' : 'bg-white dark:bg-gray-800'}`} style={{ gap: 'calc(0.25 * var(--unit))', padding: 'calc(0.75 * var(--unit))' }}>
 
         {/* Your Lists Section */}
-        <h2 className={`font-bold h-1/12 ${theme === 'cyberpunk' ? 'text-cyan-400 neon-text' : 'text-indigo-800 dark:text-white'}`} style={{ fontSize: 'calc(1.125 * var(--text-base))' }}>Your Lists</h2>
+        <h2 className={`font-bold h-1/12 ${theme === 'cyberpunk' ? 'text-cyan-400 neon-text' : 'text-indigo-800 dark:text-white'}`} style={{ fontSize: 'calc(1.125 * var(--text-base))' }}>Quick View</h2>
         <div className={`h-6/12 flex flex-col scrollbar overflow-auto ${theme === 'cyberpunk' ? 'cyberpunk-scrollbar' : ''}`} style={{ gap: 'calc(1 * var(--unit))' }}>
             {(Array.isArray(data.lists) ? data.lists : []).map(list => {
                 let problemCount = 0;

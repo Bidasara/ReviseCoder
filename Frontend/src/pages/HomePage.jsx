@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const Button = ({ children, primary = false, onClick }) => (
     <button
         onClick={onClick}
-        className={`px-6 py-3 font-semibold rounded-lg transition-transform duration-200 ease-in-out ${primary
+        className={`px-5 py-2 text-md font-semibold rounded-lg transition-transform duration-200 ease-in-out ${primary
                 ? 'bg-indigo-600 text-white hover:bg-indigo-700 active:scale-95'
                 : 'bg-white text-indigo-600 border border-indigo-200 hover:bg-indigo-50 active:scale-95'
             }`}
@@ -41,8 +41,8 @@ const Navbar = () => {
                         <button onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-600 hover:text-indigo-600">How It Works</button>
                         <button onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-600 hover:text-indigo-600">Features</button>
                     </div>
-                    <div className="hidden md:flex items-center space-x-4">
-                         <button onClick={() => handleNavigation('#/login')} className="text-gray-600 hover:text-indigo-600">Login</button>
+                    <div className="flex items-center space-x-4">
+                         <button onClick={() => handleNavigation('#/login')} className="text-gray-600 hover:text-indigo-600 text-md ">Login</button>
                          <Button primary onClick={() => handleNavigation('#/register')}>Sign Up</Button>
                     </div>
                 </div>
@@ -82,12 +82,12 @@ const FinalCTASection = () => {
                     Stop the endless cycle of solving and forgetting. Build patterns that stick with spaced repetition,
                     custom hints, and an engaging interface that makes practice enjoyable.
                 </p>
-                <div className="mt-8 space-x-4">
+                <div className="flex mt-8 items-center justify-center space-x-4">
                     <Button onClick={() => handleNavigation('#/register')}>Start Free Today</Button>
                     <Button onClick={() => handleNavigation('#/login')}>Already have an account?</Button>
                 </div>
                 <p className="mt-4 text-sm text-indigo-300">
-                    Join developers preparing for FAANG and beyond
+                    Join developers preparing for MAANG and beyond
                 </p>
             </div>
         </section>

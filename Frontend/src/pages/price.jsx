@@ -290,11 +290,11 @@ const PricePage = () => {
         {cart.length > 0 && <span className='text-white content-center absolute bg-red-500'
           style={{
             fontSize: 'var(--text-xs)',
-            borderRadius: 'calc(4 * var(--unit-xs))',
-            bottom: 'calc(8 * var(--unit-xs))',
-            left: 'calc(8.5 * var(--unit-xs))',
-            width: 'calc(4 * var(--unit-xs))',
-            height: 'calc(4 * var(--unit-xs))'
+            borderRadius: 'calc(5 * var(--unit-xs))',
+            bottom: 'calc(11.5 * var(--unit-xs))',
+            left: 'calc(11.5 * var(--unit-xs))',
+            width: 'calc(5 * var(--unit-xs))',
+            height: 'calc(5 * var(--unit-xs))'
           }}></span>}
         <svg xmlns="http://www.w3.org/2000/svg"
           style={{
